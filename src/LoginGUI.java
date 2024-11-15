@@ -5,6 +5,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class LoginGUI extends JFrame implements ActionListener {
     private TextFieldCustom usernameField;
@@ -70,6 +72,23 @@ public class LoginGUI extends JFrame implements ActionListener {
                 registerLabel.getPreferredSize().width,
                 registerLabel.getPreferredSize().height
         );
+        registerLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                dispose();
+                new RegisterGUI().setVisible(true);
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                super.mouseExited(e);
+            }
+        });
 
         // add to frame
         getContentPane().add(loginImage);

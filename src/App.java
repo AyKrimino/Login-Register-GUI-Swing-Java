@@ -5,8 +5,7 @@ public class App {
         SwingUtilities.invokeLater(new Runnable() { // ensures that the GUI is created and managed on the Event Dispatch Thread, which is essential for thread safety in Swing.
             @Override
             public void run() {
-                //new LoginGUI().setVisible(true);
-                new RegisterGUI().setVisible(true);
+                new LoginGUI().setVisible(true);
             }
         });
     }

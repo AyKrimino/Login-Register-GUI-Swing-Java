@@ -133,6 +133,23 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
                 loginLabel.getPreferredSize().width,
                 loginLabel.getPreferredSize().height
         );
+        loginLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                dispose();
+                new LoginGUI().setVisible(true);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                super.mouseExited(e);
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                super.mouseEntered(e);
+            }
+        });
 
         // Add to frame
         getContentPane().add(registerLabel);
