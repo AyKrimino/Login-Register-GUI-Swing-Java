@@ -14,4 +14,7 @@ public class CommonConstants {
 
     // result dialog config
     public static final Dimension RESULT_DIALOG_SIZE = new Dimension((int)(FRAME_SIZE.width / 3), (int)(FRAME_SIZE.height / 6));
+
+    // Register Config
+    public static final Dimension REGISTER_LABEL_SIZE = new Dimension(FRAME_SIZE.width, 150);
 }
