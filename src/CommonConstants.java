@@ -4,6 +4,11 @@ public class CommonConstants {
     // File paths
     public static final String LOGIN_IMAGE_PATH = "Resources/profile.png";
 
+    // Color configs
+    public static final Color PRIMARY_COLOR = new Color(38, 37, 70);
+    public static final Color SECONDARY_COLOR = new Color(255, 171, 63);
+    public static final Color BUTTON_COLOR = new Color(207, 6, 0);
+
     // Frame Config
     public static final Dimension FRAME_SIZE = new Dimension(540, 760);
     public static final Dimension TEXT_FIELD_SIZE = new Dimension((int)(FRAME_SIZE.width * 0.8), 50);

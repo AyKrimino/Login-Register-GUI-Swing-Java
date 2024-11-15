@@ -20,6 +20,7 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setLayout(null);
+        getContentPane().setBackground(CommonConstants.PRIMARY_COLOR);
 
         addGUIComponents();
     }
@@ -27,6 +28,7 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
     private void addGUIComponents() {
         // Register Label
         JLabel registerLabel = new JLabel("Register");
+        registerLabel.setForeground(CommonConstants.SECONDARY_COLOR);
         registerLabel.setHorizontalAlignment(SwingConstants.CENTER);
         registerLabel.setBounds(
                 0,
@@ -37,6 +39,8 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
 
         // Username Field
         usernameField = new TextFieldCustom("Enter Username", 30);
+        usernameField.setBackground(CommonConstants.SECONDARY_COLOR);
+        usernameField.setForeground(Color.WHITE);
         usernameField.setBounds(
                 50,
                 registerLabel.getY() + 150,
@@ -57,6 +61,8 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
 
         // Password Field
         passwordField = new PasswordFieldCustom("Enter Password", 30);
+        passwordField.setBackground(CommonConstants.SECONDARY_COLOR);
+        passwordField.setForeground(Color.WHITE);
         passwordField.setBounds(
                 50,
                 usernameField.getY() + 100,
@@ -77,6 +83,8 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
 
         // Confirm Password Field
         confirmPasswordField = new PasswordFieldCustom("Confirm Password", 30);
+        confirmPasswordField.setBackground(CommonConstants.SECONDARY_COLOR);
+        confirmPasswordField.setForeground(Color.WHITE);
         confirmPasswordField.setBounds(
                 50,
                 passwordField.getY() + 100,
@@ -96,6 +104,8 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
 
         // Email Field
         emailField = new TextFieldCustom("example@example.com", 50);
+        emailField.setBackground(CommonConstants.SECONDARY_COLOR);
+        emailField.setForeground(Color.WHITE);
         emailField.setBounds(
                 50,
                 confirmPasswordField.getY() + 100,
@@ -115,6 +125,8 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
 
         // Register Button
         JButton registerButton = new JButton("Register");
+        registerButton.setBackground(CommonConstants.BUTTON_COLOR);
+        registerButton.setForeground(Color.WHITE);
         registerButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         registerButton.setBounds(
                 50,
@@ -126,6 +138,7 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
 
         // Register --> Login Label
         JLabel loginLabel = new JLabel("Already a user ? Login here.");
+        loginLabel.setForeground(CommonConstants.SECONDARY_COLOR);
         loginLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         loginLabel.setBounds(
                 (CommonConstants.FRAME_SIZE.width - loginLabel.getPreferredSize().width) / 2,
@@ -142,12 +155,12 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
 
             @Override
             public void mouseExited(MouseEvent e) {
-                super.mouseExited(e);
+                loginLabel.setForeground(CommonConstants.SECONDARY_COLOR);
             }
 
             @Override
             public void mouseEntered(MouseEvent e) {
-                super.mouseEntered(e);
+                loginLabel.setForeground(Color.WHITE);
             }
         });
 
@@ -231,11 +244,13 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
             resultDialog.setSize(CommonConstants.RESULT_DIALOG_SIZE);
             resultDialog.setLocationRelativeTo(this);
             resultDialog.setModal(true);
+            resultDialog.getContentPane().setBackground(CommonConstants.PRIMARY_COLOR);
 
             // result label
             JLabel resultLabel = new JLabel();
             resultLabel.setPreferredSize(CommonConstants.RESULT_DIALOG_SIZE);
             resultLabel.setHorizontalAlignment(SwingConstants.CENTER);
+            resultLabel.setForeground(CommonConstants.SECONDARY_COLOR);
             resultDialog.add(resultLabel);
 
             if (isValid) {

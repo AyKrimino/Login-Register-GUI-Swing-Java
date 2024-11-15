@@ -19,6 +19,8 @@ public class LoginGUI extends JFrame implements ActionListener {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setLayout(null);
+        getContentPane().setBackground(CommonConstants.PRIMARY_COLOR);
+
 
         addGuiComponents();
     }
@@ -35,6 +37,8 @@ public class LoginGUI extends JFrame implements ActionListener {
 
         // Username Field
         usernameField = new TextFieldCustom("Enter Username", 30);
+        usernameField.setBackground(CommonConstants.SECONDARY_COLOR);
+        usernameField.setForeground(Color.WHITE);
         usernameField.setBounds(
                 50,
                 loginImage.getY() + 315,
@@ -45,6 +49,8 @@ public class LoginGUI extends JFrame implements ActionListener {
 
         // Password Field
         passwordField = new PasswordFieldCustom("Enter Password", 30);
+        passwordField.setBackground(CommonConstants.SECONDARY_COLOR);
+        passwordField.setForeground(Color.WHITE);
         passwordField.setBounds(
                 50,
                 usernameField.getY() + 100,
@@ -54,6 +60,8 @@ public class LoginGUI extends JFrame implements ActionListener {
 
         // Login Button
         JButton loginButton = new JButton("Login");
+        loginButton.setBackground(CommonConstants.BUTTON_COLOR);
+        loginButton.setForeground(Color.WHITE);
         loginButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         loginButton.setBounds(
                 50,
@@ -65,6 +73,7 @@ public class LoginGUI extends JFrame implements ActionListener {
 
         // login register label
         JLabel registerLabel = new JLabel("Not registered ? Click Here!");
+        registerLabel.setForeground(CommonConstants.SECONDARY_COLOR);
         registerLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         registerLabel.setBounds(
                 (CommonConstants.FRAME_SIZE.width - registerLabel.getPreferredSize().width) / 2,
@@ -81,12 +90,12 @@ public class LoginGUI extends JFrame implements ActionListener {
 
             @Override
             public void mouseEntered(MouseEvent e) {
-                super.mouseEntered(e);
+                registerLabel.setForeground(Color.WHITE);
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
-                super.mouseExited(e);
+                registerLabel.setForeground(CommonConstants.SECONDARY_COLOR);
             }
         });
 
@@ -108,10 +117,12 @@ public class LoginGUI extends JFrame implements ActionListener {
             resultDialog.pack();
             resultDialog.setLocationRelativeTo(this); // Center the dialog on the screen
             resultDialog.setModal(true); // This makes the dialog modal, meaning that while the dialog is open, the user cannot interact with the main LoginGUI window. The user must first close the dialog before returning to the main interface.
+            resultDialog.getContentPane().setBackground(CommonConstants.PRIMARY_COLOR);
 
             // Create label (Display result)
             JLabel resultLabel = new JLabel();
             resultLabel.setHorizontalAlignment(SwingConstants.CENTER);
+            resultLabel.setForeground(CommonConstants.SECONDARY_COLOR);
             resultDialog.add(resultLabel);
 
             // Retrieve Entered credentials
