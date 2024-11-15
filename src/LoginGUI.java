@@ -11,6 +11,7 @@ import java.awt.event.MouseEvent;
 public class LoginGUI extends JFrame implements ActionListener {
     private TextFieldCustom usernameField;
     private PasswordFieldCustom passwordField;
+    private Font customFont;
 
     public LoginGUI() {
         super("Login");
@@ -21,6 +22,8 @@ public class LoginGUI extends JFrame implements ActionListener {
         setLayout(null);
         getContentPane().setBackground(CommonConstants.PRIMARY_COLOR);
 
+        // create custom font
+        customFont = CustomTools.createFont(CommonConstants.FONT_PATH);
 
         addGuiComponents();
     }
@@ -37,6 +40,7 @@ public class LoginGUI extends JFrame implements ActionListener {
 
         // Username Field
         usernameField = new TextFieldCustom("Enter Username", 30);
+        usernameField.setFont(customFont.deriveFont(32f));
         usernameField.setBackground(CommonConstants.SECONDARY_COLOR);
         usernameField.setForeground(Color.WHITE);
         usernameField.setBounds(
@@ -49,6 +53,7 @@ public class LoginGUI extends JFrame implements ActionListener {
 
         // Password Field
         passwordField = new PasswordFieldCustom("Enter Password", 30);
+        passwordField.setFont(customFont.deriveFont(32f));
         passwordField.setBackground(CommonConstants.SECONDARY_COLOR);
         passwordField.setForeground(Color.WHITE);
         passwordField.setBounds(
@@ -60,6 +65,7 @@ public class LoginGUI extends JFrame implements ActionListener {
 
         // Login Button
         JButton loginButton = new JButton("Login");
+        loginButton.setFont(customFont.deriveFont(32f));
         loginButton.setBackground(CommonConstants.BUTTON_COLOR);
         loginButton.setForeground(Color.WHITE);
         loginButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -73,6 +79,7 @@ public class LoginGUI extends JFrame implements ActionListener {
 
         // login register label
         JLabel registerLabel = new JLabel("Not registered ? Click Here!");
+        registerLabel.setFont(customFont.deriveFont(32f));
         registerLabel.setForeground(CommonConstants.SECONDARY_COLOR);
         registerLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         registerLabel.setBounds(
@@ -121,6 +128,7 @@ public class LoginGUI extends JFrame implements ActionListener {
 
             // Create label (Display result)
             JLabel resultLabel = new JLabel();
+            resultLabel.setFont(customFont.deriveFont(26f));
             resultLabel.setHorizontalAlignment(SwingConstants.CENTER);
             resultLabel.setForeground(CommonConstants.SECONDARY_COLOR);
             resultDialog.add(resultLabel);

@@ -12,6 +12,7 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
     private ErrorLabel usernameErrorLabel, passwordErrorLabel, confirmPasswordErrorLabel, emailErrorLabel;
     private TextFieldCustom usernameField, emailField;
     private PasswordFieldCustom passwordField, confirmPasswordField;
+    private Font customFont;
 
     public RegisterGUI() {
         super("Register");
@@ -21,6 +22,7 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
         setResizable(false);
         setLayout(null);
         getContentPane().setBackground(CommonConstants.PRIMARY_COLOR);
+        customFont = CustomTools.createFont(CommonConstants.FONT_PATH);
 
         addGUIComponents();
     }
@@ -28,6 +30,7 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
     private void addGUIComponents() {
         // Register Label
         JLabel registerLabel = new JLabel("Register");
+        registerLabel.setFont(customFont.deriveFont(68f));
         registerLabel.setForeground(CommonConstants.SECONDARY_COLOR);
         registerLabel.setHorizontalAlignment(SwingConstants.CENTER);
         registerLabel.setBounds(
@@ -39,6 +42,7 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
 
         // Username Field
         usernameField = new TextFieldCustom("Enter Username", 30);
+        usernameField.setFont(customFont.deriveFont(32f));
         usernameField.setBackground(CommonConstants.SECONDARY_COLOR);
         usernameField.setForeground(Color.WHITE);
         usernameField.setBounds(
@@ -61,6 +65,7 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
 
         // Password Field
         passwordField = new PasswordFieldCustom("Enter Password", 30);
+        passwordField.setFont(customFont.deriveFont(32f));
         passwordField.setBackground(CommonConstants.SECONDARY_COLOR);
         passwordField.setForeground(Color.WHITE);
         passwordField.setBounds(
@@ -83,6 +88,7 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
 
         // Confirm Password Field
         confirmPasswordField = new PasswordFieldCustom("Confirm Password", 30);
+        confirmPasswordField.setFont(customFont.deriveFont(32f));
         confirmPasswordField.setBackground(CommonConstants.SECONDARY_COLOR);
         confirmPasswordField.setForeground(Color.WHITE);
         confirmPasswordField.setBounds(
@@ -104,6 +110,7 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
 
         // Email Field
         emailField = new TextFieldCustom("example@example.com", 50);
+        emailField.setFont(customFont.deriveFont(32f));
         emailField.setBackground(CommonConstants.SECONDARY_COLOR);
         emailField.setForeground(Color.WHITE);
         emailField.setBounds(
@@ -125,6 +132,7 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
 
         // Register Button
         JButton registerButton = new JButton("Register");
+        registerButton.setFont(customFont.deriveFont(32f));
         registerButton.setBackground(CommonConstants.BUTTON_COLOR);
         registerButton.setForeground(Color.WHITE);
         registerButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -138,6 +146,7 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
 
         // Register --> Login Label
         JLabel loginLabel = new JLabel("Already a user ? Login here.");
+        loginLabel.setFont(customFont.deriveFont(32f));
         loginLabel.setForeground(CommonConstants.SECONDARY_COLOR);
         loginLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         loginLabel.setBounds(
@@ -248,6 +257,7 @@ public class RegisterGUI extends JFrame implements FocusListener, ActionListener
 
             // result label
             JLabel resultLabel = new JLabel();
+            resultLabel.setFont(customFont.deriveFont(22f));
             resultLabel.setPreferredSize(CommonConstants.RESULT_DIALOG_SIZE);
             resultLabel.setHorizontalAlignment(SwingConstants.CENTER);
             resultLabel.setForeground(CommonConstants.SECONDARY_COLOR);

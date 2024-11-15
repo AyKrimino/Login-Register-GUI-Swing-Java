@@ -1,6 +1,7 @@
 package custom;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 // Custom version of JPasswordField to have placeholder text
@@ -25,6 +26,10 @@ public class PasswordFieldCustom extends JPasswordField {
 
         // changes styling to text
         setEchoChar((char) 0);
+
+        // add margin to text (which is equivalent to PasswordField padding)
+        setMargin(new Insets(0, 10, 0, 0));
+
         addListeners();
     }
 

@@ -3,6 +3,7 @@ import java.awt.*;
 public class CommonConstants {
     // File paths
     public static final String LOGIN_IMAGE_PATH = "Resources/profile.png";
+    public static final String FONT_PATH = "Resources/coolvetica condensed rg.otf";
 
     // Color configs
     public static final Color PRIMARY_COLOR = new Color(38, 37, 70);

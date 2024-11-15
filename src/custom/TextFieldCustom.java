@@ -1,6 +1,7 @@
 package custom;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 public class TextFieldCustom extends JTextField {
@@ -21,6 +22,9 @@ public class TextFieldCustom extends JTextField {
         // limit char input field
         setDocument(new LimitText(charLimit));
         setText(this.placeholderText);
+
+        // add margin to text (which is equivalent to TextField padding)
+        setMargin(new Insets(0, 10, 0, 0));
 
         addListeners();
     }
